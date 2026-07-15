@@ -1,0 +1,26 @@
+{
+  "name": "commitachi",
+  "version": "1.0.0",
+  "description": "Your terminal pet that feeds on git commits. Keep coding or it starves.",
+  "type": "module",
+  "bin": {
+    "commitachi": "./bin/cli.js"
+  },
+  "scripts": {
+    "start": "node bin/cli.js",
+    "feed": "node bin/cli.js feed",
+    "status": "node bin/cli.js status",
+    "web": "node bin/cli.js web",
+    "build:dashboard": "cd dashboard && npm run build && xcopy /E /I /Y dist ..\\public"
+  },
+  "keywords": ["cli", "terminal", "pet", "tamagotchi", "git", "gamification", "developer-tools"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "open": "^10.1.2",
+    "picocolors": "^1.1.1"
+  }
+}
