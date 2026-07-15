@@ -113,9 +113,20 @@ export async function startServer(port = 3727) {
     res.sendFile(path.join(publicDir, "index.html"));
   });
 
-  app.listen(port, () => {
+  const server = app.listen(port, () => {
     const url = `http://localhost:${port}`;
     console.log(`\n  Commitachi dashboard running at ${url}\n`);
     open(url);
+  });
+
+  server.on("error", (err) => {
+    if (err.code === "EADDRINUSE") {
+      console.log(`\n  Commitachi dashboard is already running at http://localhost:${port}\n`);
+      open(`http://localhost:${port}`);
+      process.exit(0);
+    } else {
+      console.error("Server error:", err.message);
+      process.exit(1);
+    }
   });
 }
