@@ -13,6 +13,11 @@
     "web": "node bin/cli.js web",
     "build:dashboard": "cd dashboard && npm run build && xcopy /E /I /Y dist ..\\public"
   },
+  "files": [
+    "bin/",
+    "src/",
+    "public/"
+  ],
   "keywords": ["cli", "terminal", "pet", "tamagotchi", "git", "gamification", "developer-tools"],
   "author": "",
   "license": "MIT",
