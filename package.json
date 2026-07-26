@@ -27,7 +27,7 @@
     "gamification",
     "developer-tools"
   ],
-  "author": "",
+  "author": "senotron",
   "license": "MIT",
   "dependencies": {
     "@google/generative-ai": "^0.21.0",
